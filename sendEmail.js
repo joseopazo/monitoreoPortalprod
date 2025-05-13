@@ -11,15 +11,15 @@ const transporter = nodemailer.createTransport({
 });
 
 const subject = status === "success"
-  ? "✅ Pipeline exitosa: Monitoreo Portal 1.0"
-  : "❌ Falló en la  pipeline: Monitoreo Portal 1.0";
+  ? "✅ Pipeline exitosa: Monitoreo Portal 1.0 "
+  : "❌ Papiline Fallida: Monitoreo Portal 1.0";
 
 const body = status === "success"
   ? "El monitoreo automatizado del Portal 1.0 fue exitoso.."
   : "Falló el monitoreo automático. Revisa los logs: https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}";
 
 transporter.sendMail({
-  from: `"QA Monitor" <${process.env.SMTP_USER}>`,
+  from: `"Monitoreo Portal Produccion" <${process.env.SMTP_USER}>`,
   to: "luis.cruz@falp.org,karen.sudzuki@falp.org,rogelio.cisternas@falp.org",
   subject,
   text: body
