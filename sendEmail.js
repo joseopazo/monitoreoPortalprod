@@ -12,7 +12,7 @@ const transporter = nodemailer.createTransport({
 
 const subject = status === "success"
   ? "✅ Pipeline exitosa: Monitoreo Portal 1.0"
-  : "❌ Falló la pipeline: Monitoreo Portal 1.0";
+  : "❌ Falló en la  pipeline: Monitoreo Portal 1.0";
 
 const body = status === "success"
   ? "El monitoreo automatizado del Portal 1.0 fue exitoso.."
@@ -20,7 +20,7 @@ const body = status === "success"
 
 transporter.sendMail({
   from: `"QA Monitor" <${process.env.SMTP_USER}>`,
-  to: "qa@falp.org,desarrollo@falp.org",
+  to: "luis.cruz@falp.org,karen.sudzuki@falp.org,rogelio.cisternas@falp.org",
   subject,
   text: body
 }, (error, info) => {
