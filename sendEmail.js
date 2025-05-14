@@ -20,7 +20,7 @@ const body = status === "success"
 
 transporter.sendMail({
   from: `"Monitoreo Portal Produccion" <${process.env.SMTP_USER}>`,
-  to: "luis.cruz@falp.org,karen.sudzuki@falp.org,rogelio.cisternas@falp.org",
+  to: "luis.cruz@falp.org,karen.sudzuki@falp.org,rogelio.cisternas@falp.org,jose.opazo@falp.org",
   subject,
   text: body
 }, (error, info) => {
